@@ -1,0 +1,37 @@
+
+body {
+  background: linear-gradient(to right, #d9eeff, #f1f8ff, #f6faff, #f6faff, #f1f8ff, #d9eeff) !important;
+}
+
+.article {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.details {
+  display: none;
+}
+
+.edit {
+  display: none;
+}
+
+.banner {
+  background-image: url('../images/image 4.webp');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
+
+.footer {
+  background-color: #f0efef;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footerLinkedInIcon {
+  width: 30px;
+  height: auto;
+}

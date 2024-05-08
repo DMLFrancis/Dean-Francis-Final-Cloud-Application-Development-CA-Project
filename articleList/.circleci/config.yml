@@ -1,0 +1,47 @@
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          filters:
+            branches:
+              only:
+                - main
+          requires:
+            - build
+
+orbs:
+  ruby: circleci/ruby@1.4.0
+
+jobs:
+  build:
+    working_directory: ~/articleList
+    docker:
+      - image: cimg/ruby:3.2.3
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: docker-login
+          command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - run:
+          name: build-docker-image
+          command: docker build -t $IMAGE_NAME:latest . --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE
+      - run:
+          name: publish-docker-image
+          command: docker push $IMAGE_NAME
+      - run:
+          name: run-docker-image
+          command: docker run -p 3000:3000 -d $IMAGE_NAME
+  deploy:
+    docker:
+      - image: cimg/ruby:3.2.3
+    steps:
+      - run:
+          name: deploy-application
+          command: ssh -o StrictHostKeyChecking=no ec2-13-49-231-69.eu-north-1.compute.amazonaws.com "export CONTAINER_NAME=\"$CONTAINER_NAME\"; export IMAGE_NAME=\"$IMAGE_NAME\"; rm -rf ~/articleList/; git clone https://github.com/DMLFrancis/ArticleList; source articleList/deploy.sh"

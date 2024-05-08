@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div id="testInfo" class="mb-4">
+            <h2>Unit & Integration Test Information</h2>
+            <p><strong>Framework:</strong> Custom JavaScript</p>
+            <p><strong>Tests Performed:</strong> CRUD Operations</p>
+            <p><strong>How Tests Were Done:</strong> Tests were written using JavaScript functions to check the functionality
+                of each CRUD operation.</p>
+            <p><strong>Files Used:</strong> index.html, script.js, test.js</p>
+            <hr>
+        </div>
+
+        <div id="testResults">
+            <h2>Unit Test Results:</h2>
+            <br />
+            <div id="addItemTest">
+                <h4>Add Item Test:</h4>
+                <p>This test checks whether the <code>addItem</code> function successfully adds an item to the articles array.</p>
+                <div id="addItemResult">
+                </div>
+            </div>
+            <hr>
+            <div id="getItemTest">
+                <h4>Get Item Test:</h4>
+                <p>This test checks whether the <code>getItem</code> function successfully retrieves an item from the articles array.</p>
+                <div id="getItemResult">
+                </div>
+            </div>
+            <hr>
+            <div id="updateItemTest">
+                <h4>Update Item Test:</h4>
+                <p>This test checks whether the <code>updateItem</code> function successfully updates an item in the articles array.</p>
+                <div id="updateItemResult">
+                </div>
+            </div>
+            <hr>
+            <div id="deleteItemTest">
+                <h4>Delete Item Test:</h4>
+                <p>This test checks whether the <code>deleteItem</code> function successfully deletes an item from the articles array.</p>
+                <div id="deleteItemResult">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br />
+        <div id="integrationTestResults">
+            <h2>Integration Test Results:</h2>
+            <br />
+            <h4>Data Loading Integration Test:</h4>
+            <p>This test checks whether data is loaded successfully and the article count is updated accordingly.</p>
+            <div id="dataLoadingTest">
+                <div id="dataLoadingResult">
+                </div>
+            </div>
+            <hr>
+            <h4>Article Addition Integration Test:</h4>
+            <p>This test checks whether a new article is successfully added to the articles array.</p>
+            <div id="articleAdditionTest">
+                <div id="articleAdditionResult">
+                </div>
+            </div>
+            <hr>
+            <h4>Article Update Integration Test:</h4>
+            <p>This test checks whether an article is successfully updated in the articles array.</p>
+            <div id="articleUpdateTest">
+                <div id="articleUpdateResult">
+                </div>
+            </div>
+            <hr>
+            <h4>Article Deletion Integration Test:</h4>
+            <p>This test checks whether an article is successfully deleted from the articles array.</p>
+            <div id="articleDeletionTest">
+                <div id="articleDeletionResult">
+                </div>
+            </div>
+        </div>
+        <button onclick="window.location.href='index.html'" class="btn btn-primary mt-4">Back to Application</button>
+        <br /><br /><br />
+        <script src="test.js"></script>
+    </div>
+</body>
+
+</html>

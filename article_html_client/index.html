@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>HTML Client - Article Application</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="banner"></div>
+  <div class="container">
+    <br />
+    <h2>HTML Client - Article Application</h2>
+    <br />
+    <h3>Article Archive</h3>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="publishedFilter" onchange="filterArticles()">
+      <label class="form-check-label" for="publishedFilter">Published Only</label>
+    </div>
+    <div id="articles"></div>
+    <div>
+      <br />
+      <h3>Add New Article</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" id="newTitle" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="newBody" placeholder="Body"></textarea>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="newPublished">
+        <label class="form-check-label" for="newPublished">Published</label>
+      </div>
+      <button class="btn btn-primary" onclick="validateAndAddArticle()">Add Article</button>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <button onclick="topFunction()" class="btn btn-primary" id="backToTopBtn" title="Go to top">Back to Top</button>
+  </div>
+  <div class="text-center mt-3">
+    <a href="testresults.html" class="btn btn-secondary">View Test Results</a>
+  </div>
+  <br />
+  <div class="footer">
+    <h5>Dean Francis</h5>
+    <p class="footerText">Student number - 22212761</p>
+    <a href="https://www.linkedin.com/in/deanfrancis/">
+      <img class="footerLinkedInIcon" src="images/LinkedIn_logo_initials.png" alt="LinkedIn" />
+    </a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
